@@ -4,7 +4,7 @@ This java console application provides users a quick way to verify jdbc connecti
 
 ## Build
 
-Use ```maven install`` in the jdbcverify project to build the application in the *target/jdbcverify* directory. The directory can be zipped and put on the server that needs verification.
+Use ```maven install``` in the jdbcverify project to build the application in the *target/jdbcverify* directory. The directory can be zipped and put on the server that needs verification.
 
 ## Run
 
@@ -23,7 +23,7 @@ lrwxrwxrwx. 1 nzhang users   50 Nov 24 15:08 ojdbc8.jar -> /home/nzhang/installe
 ```
 
 An example of the running the application:
-
+***
 ```console
 [nzhang@oc6541620688 jdbcverify]$ pwd
 /home/nzhang/workspace/jdbc-verify/jdbcverify/target/jdbcverify
@@ -32,6 +32,10 @@ total 16K
 -rw-r--r--. 1 nzhang users 6.6K Nov 24 14:40 app.jar
 -rwxr-xr-x. 1 nzhang users   76 Nov 24 14:48 jdbcverify.sh
 drwxr-xr-x. 2 nzhang users 4.0K Nov 24 14:40 lib
+```
+
+> *Link the jdbc library to inside lib folder*
+```console
 [nzhang@oc6541620688 jdbcverify]$ cd lib
 [nzhang@oc6541620688 jdbcverify]$ pwd
 /home/nzhang/workspace/jdbc-verify/jdbcverify/target/jdbcverify/lib
@@ -42,7 +46,13 @@ total 360K
 lrwxrwxrwx. 1 nzhang users   50 Nov 24 15:08 ojdbc8.jar -> /home/nzhang/installer/development/jdbc/ojdbc8.jar
 -rw-r--r--. 1 nzhang users 240K Nov 24 14:40 picocli-3.8.0.jar
 [nzhang@oc6541620688 lib]$ cd ..
-[nzhang@oc6541620688 jdbcverify]$ ./jdbcverify.sh -c="jdbc:oracle:thin:@//locost:21521/ORCLSE2" -d="oracle.jdbc.driver.OracleDriver" -u=system
+```
+> *Run jdbcverify.sh*
+```console
+[nzhang@oc6541620688 jdbcverify]$ ./jdbcverify.sh \
+-c="jdbc:oracle:thin:@//locost:21521/ORCLSE2" \
+-d="oracle.jdbc.driver.OracleDriver" \
+-u=system
 *******************************************
 *    JDBC Verify     ~~~~~~~~~~~~~~~~~~~~~~
 *******************************************
@@ -74,3 +84,7 @@ Please eneter sql statment: Quit or Exit to exit
 ===============================================
 Bye
 ```
+
+## Oracle Docker
+
+[oracle-db-docker](./oracle-db-docker) documents the process to create a dockerized Oracle 18.3 instance. 
