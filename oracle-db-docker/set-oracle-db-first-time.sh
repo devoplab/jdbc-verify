@@ -25,7 +25,7 @@ ORACLUID=54321
 
 DBNAME=ORCLSE2
 
-DBPASSWD=OracleI83Se2
+DBPASSWD=password
 
 echo "########## Creating this Oracle container's data volume on host ################"
 
