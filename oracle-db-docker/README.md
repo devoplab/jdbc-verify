@@ -25,3 +25,7 @@ I increased the container size in following steps:
     2. Please check if you need to persist any containers into images before the ```rm -rf``` step. There is no recovery of the containers from the previous step.
 
 3. Download the Oracel DB installer from [Oracle Technology Network](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html) and put into the dockerfile. The download installer is form Enterprise Edition and Standard Edition. I was not able to use it to build 18c Express. 
+
+4. Use ```./create-oracle-183-std-image.sh``` to create a 18.2 Standard Edition Database.
+
+5. Use ```./set-oracle-db-first-time.sh``` create start the DB image first time and create an Oracle DB in the container.
