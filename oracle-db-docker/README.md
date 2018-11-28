@@ -28,8 +28,6 @@ Increased the container size to 20G in following steps:
     rm -rf /var/lib/docker/devicemapper/*
     ```
 
-3. Download the Oracel DB installer from [Oracle Technology Network](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html) and put into the dockerfile. The download installer is form Enterprise Edition and Standard Edition. I was not able to use it to build 18c Express. 
-
 4. Get Oracle source for dockerfile and buildscript for Single Instance DB. 
 
 ```console
@@ -46,9 +44,11 @@ Receiving objects: 100% (9056/9056), 9.99 MiB | 6.19 MiB/s, done.
 Resolving deltas: 100% (5173/5173), done.
 ```
 
+4. Download the Oracel DB installer from [Oracle Technology Network](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html) and put into the dockerfile directory. The download installer is form Enterprise Edition and Standard Edition. I was not able to use it to build 18c Express. 
+
 ### Build
 
-1. Use [create-oracle-183-std-image.sh](./create-oracle-183-std-image.sh) to create a 18.2 Standard Edition Database. The script needs one parameter for the path to the OracleDatabase/SingleInstance/dockerfiles directory that downloaded in previous step.
+1. Use [create-oracle-183-std-image.sh](./create-oracle-183-std-image.sh) to create a 18.3 Standard Edition Database. The script needs one parameter for the path to the OracleDatabase/SingleInstance/dockerfiles directory that downloaded in previous step.
 
 ```console
 [nzhang@oc6541620688 oracle-db-docker]$ ./create-oracle-183-std-image.sh \
